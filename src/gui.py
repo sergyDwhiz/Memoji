@@ -83,3 +83,16 @@ def show_vid():
         lmain.after(10, show_vid) # call the function after 10ms
     if cv2.waitKey(1) & 0xFF == ord('q'): # if 'q' (FOr Quit) is pressed
         exit()
+
+'''
+Now, we need to display the corresponding Emoji
+'''
+
+def show_vid2():
+    frame2 = cv2.imread(emoji_dist[show_text[0]])
+    pic2 = cv2.cvtColor(frame2, cv2.COLOR_BGR2RGB) # convert the frame to RGB
+    img2 = Image.fromarray(frame2) # convert the frame to an image
+    imgtk2 = ImageTk.PhotoImage(image = img2) # convert the image to a Tkinter image
+    lmain2.imgtk2 = imgtk2 # set the image to the Tkinter image
+    lmain2.configure(image = imgtk2) # configure the image
+    lmain2.after(10, show_vid2) # call the function after 10ms
