@@ -40,3 +40,9 @@ disable OpenCL usage in OpenCV
 cv2.ocl.setUseOpenCL(False)
 emotion_dict = {0: 'Angry', 1: 'Disgusted', 2: 'Fearful', 3: 'Happy', 4: 'Neutral', 5: 'Sad', 6: 'Surprised'}
 emoji_dist = {0: 'emojis/angry.png', 1: 'emojis/disgusted.png', 2: 'emojis/fearful.png', 3: 'emojis/happy.png', 4: 'emojis/neutral.png', 5: 'emojis/sad.png', 6: 'emojis/surpriced.png'}
+
+global last_frame1
+last_frame1 = np.zeros((480, 640, 3), dtype = np.uint8) # initializing the frame
+global cap1 # video capture
+show_text = [0]  # text to show on screen
+
