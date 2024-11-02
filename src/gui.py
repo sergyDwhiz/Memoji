@@ -32,3 +32,11 @@ emotion_model.add(Dense(1024, activation = 'relu'))
 emotion_model.add(Dropout(0.5))
 emotion_model.add(Dense(7, activation = 'softmax'))
 emotion_model.load_weights('model.h5')
+
+'''
+Here, we define the labels for the emotions that the model can detect, as well as
+disable OpenCL usage in OpenCV
+'''
+cv2.ocl.setUseOpenCL(False)
+emotion_dict = {0: 'Angry', 1: 'Disgusted', 2: 'Fearful', 3: 'Happy', 4: 'Neutral', 5: 'Sad', 6: 'Surprised'}
+emoji_dist = {0: 'emojis/angry.png', 1: 'emojis/disgusted.png', 2: 'emojis/fearful.png', 3: 'emojis/happy.png', 4: 'emojis/neutral.png', 5: 'emojis/sad.png', 6: 'emojis/surpriced.png'}
