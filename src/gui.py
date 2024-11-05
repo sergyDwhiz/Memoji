@@ -95,4 +95,6 @@ def show_vid2():
     imgtk2 = ImageTk.PhotoImage(image = img2) # convert the image to a Tkinter image
     lmain2.imgtk2 = imgtk2 # set the image to the Tkinter image
     lmain2.configure(image = imgtk2) # configure the image
+
+    lmain3.configure(text=emotion_dict[show_text[0]], font=('arial', 45, 'bold')) # edit text
     lmain2.after(10, show_vid2) # call the function after 10ms
