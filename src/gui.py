@@ -98,3 +98,34 @@ def show_vid2():
 
     lmain3.configure(text=emotion_dict[show_text[0]], font=('arial', 45, 'bold')) # edit text
     lmain2.after(10, show_vid2) # call the function after 10ms
+
+
+# Set up the GUI
+
+if __name__ == '__main__':
+    root = tk.Tk()
+    img = ImageTk.PhotoImage(Image.open("logo.png"))
+    heading = Label(root, image=img, bg='black')
+
+    heading.pack()
+    heading2 = Label(root, text="Photo to Emoji", pady=20, font=('arial', 45, 'bold'), bg='black', fg='#CDCDCD')
+
+    heading2.pack()
+    lmain = tk.Label(master=root, padx=50, bd=10)
+    lmain2 = tk.Label(master=root, bd=10)
+
+    lmain3 = tk.Label(master=root, bd=10, fg="#CDCDCD", bg='black')
+    lmain.pack(side=LEFT)
+    lmain.place(x=50, y=250)
+    lmain3.pack()
+    lmain3.place(x=960, y=250)
+    lmain2.pack(side=RIGHT)
+    lmain2.place(x=900, y=350)
+
+    root.title("Photo To Emoji")
+    root.geometry("1400x900+100+10")
+    root['bg'] = 'black'
+    exitbutton = Button(root, text='Quit', fg="red", command=root.destroy, font=('arial', 25, 'bold')).pack(side=BOTTOM)
+    show_vid()
+    show_vid2()
+    root.mainloop()
